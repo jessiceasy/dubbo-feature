@@ -16,8 +16,8 @@
 1. 服务部署命令
 ```
 java 
--Ddubbo.registry.address=zkExt://127.0.0.1:2181
--D_feature=testFeature
+-Ddubbo.registry.address=zkExt://127.0.0.1:2181（注册协议和zk地址）
+-D_feature=testFeature(feature名称)
 ...
 ```
     
