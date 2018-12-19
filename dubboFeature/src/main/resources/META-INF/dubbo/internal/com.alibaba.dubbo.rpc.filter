@@ -1,0 +1,3 @@
+featureConsumer=com.lww.feature.dubbo.filter.ConsumerFilter
+featureProvider=com.lww.feature.dubbo.filter.ProviderFilter
+
