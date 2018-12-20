@@ -18,7 +18,10 @@
 java 
 -Ddubbo.registry.address=zkExt://127.0.0.1:2181（注册协议和zk地址）
 -D_feature=testFeature(feature名称)
+-Ddubbo.protocol.name=dubbo 
+-Ddubbo.protocol.port=20102
 ...
 ```
+
     
     
