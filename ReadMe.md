@@ -15,12 +15,11 @@
 1. 服务部署      
 不用修改任何代码将dubboFeature打包，并添加到微服务的依赖。    
 启动命令中增加以下参数      
-``` 
--Ddubbo.registry.address=zkExt://127.0.0.1:2181（注册协议和zk地址）
--D_feature=testFeature(feature名称)
--Ddubbo.protocol.name=dubbo(根据实际情况设置) 
--Ddubbo.protocol.port=20102(根据实际情况设置) 
--javaagent:/xxx/feature-agent-1.0-SNAPSHOT-jar-with-dependencies.jar
-...
-```
+    ``` 
+    -Ddubbo.registry.address=zkExt://127.0.0.1:2181（注册协议和zk地址）
+    -D_feature=testFeature(feature名称)
+    -Ddubbo.protocol.name=dubbo(根据实际情况设置) 
+    -Ddubbo.protocol.port=20102(根据实际情况设置) 
+    -javaagent:/xxx/feature-agent-1.0-SNAPSHOT-jar-with-dependencies.jar
+    ```
 
