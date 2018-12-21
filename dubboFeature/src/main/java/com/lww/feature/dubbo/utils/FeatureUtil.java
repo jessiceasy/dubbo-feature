@@ -21,16 +21,16 @@ public class FeatureUtil {
      * 该方法保证不会return Blank。
      */
     public static String getFeature() {
+        //被某个feature调用
+        String contextFeature = FeatureContext.getFeature();
+        if (null != contextFeature && contextFeature.trim().length() > 0) {
+            return contextFeature.trim();
+        }
         String feature = System.getProperty(FeatureConstants.FEATURE);
         //消费者所在应用本身就属于某个feature则
         if (null != feature
                 && feature.trim().length() > 0) {
             return feature.trim();
-        }
-        //被某个feature调用
-        String contextFeature = FeatureContext.getFeature();
-        if (null != contextFeature && contextFeature.trim().length() > 0) {
-            return contextFeature.trim();
         }
         return null;
     }

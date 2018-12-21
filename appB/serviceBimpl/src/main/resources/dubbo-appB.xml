@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 消费方应用信息 -->
+    <dubbo:application name="appB" />
+    <!-- 用zookeeper注册中心暴露服务地址 -->
+    <!--<dubbo:registry address="127.0.0.1:2181"  protocol="zkExt"/>-->
+    <!--<dubbo:protocol name="dubbo" port="20809"  />-->
+    <context:component-scan base-package="test"/>
+
+    <dubbo:reference id="serviceC" interface="test.ServiceC" check="false"/>
+    <bean id="serviceB" class="test.impl.ServiceBimpl"/>
+    <dubbo:service interface="test.ServiceB" ref="serviceB"/>
+    <import resource="classpath*:META-INF/spring/featurebeanfactoryprocessor.xml" />
+
+</beans>

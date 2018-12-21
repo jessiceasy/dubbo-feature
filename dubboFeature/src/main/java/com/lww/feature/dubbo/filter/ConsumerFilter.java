@@ -10,7 +10,7 @@ import com.lww.feature.dubbo.utils.FeatureUtil;
 
 
 /**
- * author: liweiwei
+ * @author: liweiwei
  * Date: 2018/12/18
  */
 @Activate(group = Constants.CONSUMER)
