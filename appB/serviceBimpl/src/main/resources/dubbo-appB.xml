@@ -14,6 +14,6 @@
     <dubbo:reference id="serviceC" interface="test.ServiceC" check="false"/>
     <bean id="serviceB" class="test.impl.ServiceBimpl"/>
     <dubbo:service interface="test.ServiceB" ref="serviceB"/>
-    <import resource="classpath*:META-INF/spring/featurebeanfactoryprocessor.xml" />
+    <import resource="classpath*:META-INF/spring/feature-beanfactory-processor.xml" />
 
 </beans>

@@ -1,7 +1,7 @@
 1. dubboFeatrue解决了什么问题?      
     在微服务架构中经常会有多个feature并行开发测试的情况，为了使多个feature之间不相互影响一般需要部署多套环境。这样在服务比较少并行开发
-的feature也比较少的情况下是可行的。但是如果服务比较多或者并行开发的feature这种方法成本太高了，比我当前在的项目组负责的系统有二十多个
-微服务,且经常是四五个feature并行开发，如果每个feature都部署一套测试环境也太浪费资源了。dubboFeature可以在不修改代码的前提下解决该问题。     
+的feature也比较少的情况下是可行的。但是如果服务比较多或者并行开发的feature这种方法成本太高了，一个项目组有几十个微服务且经常是多个feature并行开发是很常见的，
+如果每个feature都部署一套测试环境也太浪费资源了。dubboFeature可以在`不修改代码`的前提下解决该问题。     
      一图顶千言，最终要实现的效果建下图:     
  ![](z.png)     
 1. 支持jdk1.6+
@@ -22,4 +22,6 @@
     -Ddubbo.protocol.port=20102(根据实际情况设置) 
     -javaagent:/xxx/feature-agent-1.0-SNAPSHOT-jar-with-dependencies.jar
     ```
-
+1. todo 
+    1. 由于ThreadLocal的特性，多线程的时候就无法实现feature传递。考虑过InheritableThreadLocal但是InheritableThreadLocal只有在
+   父子线程间能传递好像只能传递new子线程的时候已经存在的InheritableThreadLocal。所以考虑自己的Callable、Runnable和线程池[参考](https://zhuanlan.zhihu.com/p/25243399)。

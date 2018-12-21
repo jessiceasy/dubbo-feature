@@ -9,6 +9,6 @@
 
     <bean id="serviceC" class="test.impl.ServiceCimpl"/>
     <dubbo:service interface="test.ServiceC" ref="serviceC"/>
-    <import resource="classpath*:META-INF/spring/featurebeanfactoryprocessor.xml" />
+    <import resource="classpath*:META-INF/spring/feature-beanfactory-processor.xml" />
 
 </beans>
