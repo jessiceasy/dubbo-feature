@@ -13,11 +13,15 @@
 时不会走负载均衡的逻辑所以需要修改dubbo的源代码使其即使只有一个提供者也要走负载均衡逻辑，但是修改源代码有很多弊端，比如:生产和测试需要依赖不同的jar,dubbo升级
 需要重新修改代码打包。为了避免这些弊端所以用选择了自己实现一个javaagent(在feature-agent的根目录下mvn clean package即可)。
 1. 部署命令
+
+1. 服务部署命令
 ```
+java 
 -Ddubbo.registry.address=zkExt://127.0.0.1:2181（注册协议和zk地址）
 -D_feature=testFeature(feature名称)
 -Ddubbo.protocol.name=dubbo 
 -Ddubbo.protocol.port=20102
 -javaagent:/xxx/feature-agent-1.0-SNAPSHOT-jar-with-dependencies.jar
-
+...
 ```
+
